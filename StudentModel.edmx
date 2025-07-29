@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ReportingDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Karbar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Stud">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameS" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameKh" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameP" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tavalod" Type="nvarchar" MaxLength="50" />
+          <Property Name="CodeM" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Payeh" Type="nvarchar" MaxLength="50" />
+          <Property Name="Moadel" Type="int" />
+          <Property Name="Tarikh" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pic" Type="varbinary(max)" />
+        </EntityType>
+        <EntityContainer Name="ReportingDBModelStoreContainer">
+          <EntitySet Name="Karbar" EntityType="Self.Karbar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stud" EntityType="Self.Stud" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ReportingDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Karbar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Stud">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameKh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tavalod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CodeM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Payeh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Moadel" Type="Int32" />
+          <Property Name="Tarikh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="ReportingDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Karbars" EntityType="Self.Karbar" />
+          <EntitySet Name="Studs" EntityType="Self.Stud" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ReportingDBModelStoreContainer" CdmEntityContainer="ReportingDBEntities">
+          <EntitySetMapping Name="Karbars">
+            <EntityTypeMapping TypeName="ReportingDBModel.Karbar">
+              <MappingFragment StoreEntitySet="Karbar">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="UName" ColumnName="UName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Studs">
+            <EntityTypeMapping TypeName="ReportingDBModel.Stud">
+              <MappingFragment StoreEntitySet="Stud">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="NameS" ColumnName="NameS" />
+                <ScalarProperty Name="NameKh" ColumnName="NameKh" />
+                <ScalarProperty Name="NameP" ColumnName="NameP" />
+                <ScalarProperty Name="Tavalod" ColumnName="Tavalod" />
+                <ScalarProperty Name="CodeM" ColumnName="CodeM" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Payeh" ColumnName="Payeh" />
+                <ScalarProperty Name="Moadel" ColumnName="Moadel" />
+                <ScalarProperty Name="Tarikh" ColumnName="Tarikh" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
